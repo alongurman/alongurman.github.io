@@ -1,1 +1,0 @@
-# alongurman.github.io
