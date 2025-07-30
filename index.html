@@ -15,12 +15,14 @@
 
         /* Optional: Add some basic global styling here if needed */
         body {
-        font-family: 'Rubik', Arial, sans-serif; /* Applied to body for general text */
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        color: #333;
-        font-size: 30px;
+            font-family: 'Rubik', Arial, sans-serif; /* Applied to body for general text */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-size: 30px;
+            /* NEW: Very bright grey background for the entire page */
+            background-color: #F8F8F8; /* A light, almost white grey */
         }
         .container { /* This class is not used in the main layout, but kept for context */
             max-width: 960px;
@@ -28,8 +30,8 @@
             padding: 0 20px;
         }
         h1, h2 {
-        font-family: 'Rubik', sans-serif; /* Applied to headings */
-        color: #2c3e50;
+            font-family: 'Rubik', sans-serif; /* Applied to headings */
+            color: #2c3e50;
         }
         /* Style for the horizontal separators if you want them more prominent */
         hr {
@@ -42,11 +44,43 @@
             margin-bottom: 1em; /* Space between publications */
         }
 
+        /* --- STYLES FOR TOP NAVIGATION BAR --- */
+        .top-nav {
+            text-align: center;
+            /* NEW: Black background for the top bar */
+            background-color: #000000; /* Black */
+            padding: 10px 0;
+        }
+
+        .top-nav a {
+            /* NEW: Increased font-size for buttons */
+            font-size: 1.2em; /* You can adjust this value */
+            /* NEW: White text for the buttons */
+            color: #FFFFFF; /* White */
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .top-nav a:hover {
+            text-decoration: underline; /* Optional: Add underline on hover */
+        }
+        /* --- END STYLES FOR TOP NAVIGATION BAR --- */
+
+        /* --- NEW: MAIN CONTENT WRAPPER FOR MARGINS --- */
+        .main-content {
+            max-width: 1200px; /* Adjust max width as needed */
+            margin: 0 auto;    /* Centers the content horizontally */
+            padding: 0 40px;   /* Top/bottom padding 0, left/right padding 40px */
+            box-sizing: border-box; /* Ensures padding is included in the max-width */
+        }
+        /* --- END NEW MAIN CONTENT WRAPPER --- */
+
+
         /* --- STYLES FOR HEADER SECTION LAYOUT --- */
         .header-section {
             display: flex;
             align-items: flex-start;
-            padding: 20px;
+            padding: 20px; /* This padding will now be *inside* the main-content's padding */
         }
 
         .header-text {
@@ -91,7 +125,7 @@
             display: flex;
             justify-content: center;
             gap: 20px; /* Space between the two figures */
-            padding: 20px 0;
+            padding: 20px 0; /* This padding will now be *inside* the main-content's padding */
             flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
         }
 
@@ -125,7 +159,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 20px 0;
+            padding: 20px 0; /* This padding will now be *inside* the main-content's padding */
             flex-wrap: wrap;
             align-items: flex-end; /* Aligns bottoms of images */
             /* Or 'center' if you prefer vertical centering */
@@ -145,7 +179,7 @@
         /* Existing styles for publication section */
         .publication {
             margin-bottom: 2em;
-            padding: 1em;
+            padding: 1em; /* This padding will now be *inside* the main-content's padding */
             border: 1px solid #eee;
             border-radius: 5px;
         }
@@ -165,86 +199,89 @@
 </head>
 <body>
 
-    <div style="text-align: center; background-color: #f0f0f0; padding: 10px 0;">
-        <a href="#research" style="margin: 0 15px; text-decoration: none; color: #333;">Research</a>
-        <a href="#about-me" style="margin: 0 15px; text-decoration: none; color: #333;">About Me</a>
-        <a href="#publications" style="margin: 0 15px; text-decoration: none; color: #333;">Publications</a>
+    <div class="top-nav">
+        <a href="#research">Research</a>
+        <a href="#about-me">About Me</a>
+        <a href="#publications">Publications</a>
     </div>
 
-    <div class="header-section">
-        <div class="header-text">
-            <h1>Hi! I'm Alon, an astrophysics PhD student at Tel Aviv University and an avid rock climber.</h1>
-            <p>email: alongurman at gmail dot com</p>
+    <div class="main-content">
+
+        <div class="header-section">
+            <div class="header-text">
+                <h1>Hi! I'm Alon, an astrophysics PhD student at Tel Aviv University and an avid rock climber.</h1>
+                <p>email: alongurman at gmail dot com</p>
+            </div>
+            <div class="header-images">
+                <figure>
+                    <img src="photo1.jpg" alt="Photo 1">
+                    <figcaption>3000 feet of the ground in Yosemite Valley.</figcaption>
+                </figure>
+            </div>
         </div>
-        <div class="header-images">
+
+
+        <hr>
+        <h2 id="research">Research</h2>
+        <hr>
+        <p>I am interested in all things ISM. I use the GHOSDT (Galaxy HydrOdynamical simulations of Supernova Driven Turbulence) simulations to investigate the cold ISM, star-formation self-regulation, and to predict emission lines.</p>
+
+        <div class="research-visuals">
             <figure>
-                <img src="photo1.jpg" alt="Photo 1">
-                <figcaption>3000 feet of the ground in Yosemite Valley.</figcaption>
+                <img src="picture3.png" alt="Metallicity dependence of [C II] emission">
+                <figcaption>Metallicity dependence of [C II] emission.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="picture4.png" alt="Gas-rich disk with and without magnetic fields">
+                <figcaption>Gas-rich disk with and without magnetic fields.</figcaption>
             </figure>
         </div>
+        <hr>
+
+        <h2 id="about-me">About Me</h2>
+        <hr>
+        <p>I live a second life as a rock climber. I have toured North America living out of a minivan climbing some big walls and sometimes equally challenging small rock, from Tutokanula (El Capitan) in Yosemite Valley to Mount Hooker in the Wind River Range. I am very interested in the political history of the middle east, have been vegan since 2010, and my favorite fruit is watermelon <img src="picture5.png" alt="Watermelon" style="width: 35px; height: 35px; vertical-align: middle;"></p>
+
+        <div class="about-me-images">
+            <img src="picture6.png" alt="About Me Image 6">
+            <img src="picture7.png" alt="About Me Image 7">
+            <img src="picture8.jpg" alt="About Me Image 8">
+        </div>
+
+        <hr>
+
+        <h2 id="publications">Publications</h2>
+        <hr>
+        <div class="publication">
+      <h3><a href="https://doi.org/10.48550/arXiv.2507.16700" target="_blank">The GHOSDT Simulations: II. Missing Molecules in Simulations of a Self-Regulated Interstellar Medium</a></h3>
+      <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Grudic, Michael Y.; Steinwandel, Ulrich P.; Sternberg, Amiel</p>
+      <p class="journal-info">arXiv e-prints, July 2025, arXiv:2507.16700</p>
     </div>
 
-
-    <hr>
-    <h2 id="research">Research</h2>
-    <hr>
-    <p>I am interested in all things ISM. I use the GHOSDT (Galaxy HydrOdynamical simulations of Supernova Driven Turbulence) simulations to investigate the cold ISM, star-formation self-regulation, and to predict emission lines.</p>
-
-    <div class="research-visuals">
-        <figure>
-            <img src="picture3.png" alt="Metallicity dependence of [C II] emission">
-            <figcaption>Metallicity dependence of [C II] emission.</figcaption>
-        </figure>
-
-        <figure>
-            <img src="picture4.png" alt="Gas-rich disk with and without magnetic fields">
-            <figcaption>Gas-rich disk with and without magnetic fields.</figcaption>
-        </figure>
-    </div>
-    <hr>
-
-    <h2 id="about-me">About Me</h2>
-    <hr>
-    <p>I live a second life as a rock climber. I have toured North America living out of a minivan climbing some big walls and sometimes equally challenging small rock, from Tutokanula (El Capitan) in Yosemite Valley to Mount Hooker in the Wind River Range. I am very interested in the political history of the middle east, have been vegan since 2010, and my favorite fruit is watermelon <img src="picture5.png" alt="Watermelon" style="width: 35px; height: 35px; vertical-align: middle;"></p>
-
-    <div class="about-me-images">
-        <img src="picture6.png" alt="About Me Image 6">
-        <img src="picture7.png" alt="About Me Image 7">
-        <img src="picture8.jpg" alt="About Me Image 8">
-    </div>
-
-    <hr>
-
-    <h2 id="publications">Publications</h2>
-    <hr>
     <div class="publication">
-  <h3><a href="https://doi.org/10.48550/arXiv.2507.16700" target="_blank">The GHOSDT Simulations: II. Missing Molecules in Simulations of a Self-Regulated Interstellar Medium</a></h3>
-  <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Grudic, Michael Y.; Steinwandel, Ulrich P.; Sternberg, Amiel</p>
-  <p class="journal-info">arXiv e-prints, July 2025, arXiv:2507.16700</p>
-</div>
+      <h3><a href="https://doi.org/10.3847/1538-4357/adc814" target="_blank">The GHOSDT Simulations: I. Magnetic Support in Gas-rich Disks</a></h3>
+      <p class="authors"><strong>Gurman, Alon</strong>; Steinwandel, Ulrich P.; Hu, Chia-Yu; Sternberg, Amiel</p>
+      <p class="journal-info">The Astrophysical Journal, May 2025, Volume 984, Number 2, page 142</p>
+    </div>
 
-<div class="publication">
-  <h3><a href="https://doi.org/10.3847/1538-4357/adc814" target="_blank">The GHOSDT Simulations: I. Magnetic Support in Gas-rich Disks</a></h3>
-  <p class="authors"><strong>Gurman, Alon</strong>; Steinwandel, Ulrich P.; Hu, Chia-Yu; Sternberg, Amiel</p>
-  <p class="journal-info">The Astrophysical Journal, May 2025, Volume 984, Number 2, page 142</p>
-</div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/ad2eac" target="_blank">[C II] Emission in a Self-regulated Interstellar Medium</a></h3>
+      <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Sternberg, Amiel; van Dishoeck, Ewine F.</p>
+      <p class="journal-info">The Astrophysical Journal, April 2024, Volume 965, Number 2, page 179</p>
+    </div>
 
-<div class="publication">
-  <h3><a href="https://doi.org/10.3847/1538-4357/ad2eac" target="_blank">[C II] Emission in a Self-regulated Interstellar Medium</a></h3>
-  <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Sternberg, Amiel; van Dishoeck, Ewine F.</p>
-  <p class="journal-info">The Astrophysical Journal, April 2024, Volume 965, Number 2, page 179</p>
-</div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I in Molecular Clouds: Irradiation by FUV Plus Cosmic Rays</a></h3>
+      <p class="authors">Sternberg, Amiel; Bialy, Shmuel; <strong>Gurman, Alon</strong></p>
+      <p class="journal-info">The Astrophysical Journal, January 2024, Volume 960, Number 1, page 8</p>
+    </div>
 
-<div class="publication">
-  <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I in Molecular Clouds: Irradiation by FUV Plus Cosmic Rays</a></h3>
-  <p class="authors">Sternberg, Amiel; Bialy, Shmuel; <strong>Gurman, Alon</strong></p>
-  <p class="journal-info">The Astrophysical Journal, January 2024, Volume 960, Number 1, page 8</p>
-</div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I-to-H<sub>2</sub> Transitions in Dust-free Interstellar Gas</a></h3>
+      <p class="authors">Sternberg, Amiel; <strong>Gurman, Alon</strong>; Bialy, Shmuel</p>
+      <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
+    </div>
 
-<div class="publication">
-  <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I-to-H<sub>2</sub> Transitions in Dust-free Interstellar Gas</a></h3>
-  <p class="authors">Sternberg, Amiel; <strong>Gurman, Alon</strong>; Bialy, Shmuel</p>
-  <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
-</div>
-</body>
+    </div> </body>
 </html>
