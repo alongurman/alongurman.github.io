@@ -20,8 +20,7 @@
             margin: 0;
             padding: 0;
             color: #333;
-            font-size: 30px;
-            /* NEW: Very bright grey background for the entire page */
+            font-size: 30px; /* Default font size for larger screens */
             background-color: #F8F8F8; /* A light, almost white grey */
         }
         .container { /* This class is not used in the main layout, but kept for context */
@@ -47,15 +46,12 @@
         /* --- STYLES FOR TOP NAVIGATION BAR --- */
         .top-nav {
             text-align: center;
-            /* NEW: Black background for the top bar */
             background-color: #000000; /* Black */
             padding: 10px 0;
         }
 
         .top-nav a {
-            /* NEW: Increased font-size for buttons */
             font-size: 1.2em; /* You can adjust this value */
-            /* NEW: White text for the buttons */
             color: #FFFFFF; /* White */
             margin: 0 15px;
             text-decoration: none;
@@ -66,21 +62,21 @@
         }
         /* --- END STYLES FOR TOP NAVIGATION BAR --- */
 
-        /* --- NEW: MAIN CONTENT WRAPPER FOR MARGINS --- */
+        /* --- MAIN CONTENT WRAPPER FOR MARGINS --- */
         .main-content {
             max-width: 1200px; /* Adjust max width as needed */
             margin: 0 auto;    /* Centers the content horizontally */
-            padding: 0 25px;   /* Top/bottom padding 0, left/right padding 40px */
+            padding: 0 25px;   /* Top/bottom padding 0, left/right padding 25px for larger screens */
             box-sizing: border-box; /* Ensures padding is included in the max-width */
         }
-        /* --- END NEW MAIN CONTENT WRAPPER --- */
+        /* --- END MAIN CONTENT WRAPPER --- */
 
 
         /* --- STYLES FOR HEADER SECTION LAYOUT --- */
         .header-section {
             display: flex;
             align-items: flex-start;
-            padding: 20px; /* This padding will now be *inside* the main-content's padding */
+            padding: 20px;
         }
 
         .header-text {
@@ -125,7 +121,7 @@
             display: flex;
             justify-content: center;
             gap: 20px; /* Space between the two figures */
-            padding: 20px 0; /* This padding will now be *inside* the main-content's padding */
+            padding: 20px 0;
             flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
         }
 
@@ -159,7 +155,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            padding: 20px 0; /* This padding will now be *inside* the main-content's padding */
+            padding: 20px 0;
             flex-wrap: wrap;
             align-items: flex-end; /* Aligns bottoms of images */
             /* Or 'center' if you prefer vertical centering */
@@ -179,7 +175,7 @@
         /* Existing styles for publication section */
         .publication {
             margin-bottom: 2em;
-            padding: 1em; /* This padding will now be *inside* the main-content's padding */
+            padding: 1em;
             border: 1px solid #eee;
             border-radius: 5px;
         }
@@ -195,6 +191,42 @@
         }
         .authors { /* Authors will be styled individually, no global bold here */ }
         .journal-info { font-style: italic; }
+
+
+        /* --- NEW: Media Query for Mobile Devices --- */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px; /* Smaller font size for mobile body text */
+            }
+            h1 {
+                font-size: 2em; /* Adjust heading 1 size for mobile */
+            }
+            h2 {
+                font-size: 1.5em; /* Adjust heading 2 size for mobile */
+            }
+            .main-content {
+                padding-left: 15px; /* Keep left padding as is (or adjust if needed) */
+                padding-right: 10px; /* Smaller right padding for mobile */
+            }
+            .header-section {
+                flex-direction: column; /* Stacks header text and images vertically on mobile */
+                align-items: center; /* Centers items when stacked */
+            }
+            .header-text {
+                max-width: 100%; /* Allows text to take full width */
+                padding-right: 0; /* Removes extra padding */
+                text-align: center; /* Centers header text */
+            }
+            .header-images {
+                flex: 0 0 100%; /* Images take full width */
+                width: 100%; /* Ensure images scale */
+            }
+            .research-visuals figure {
+                flex: 1 1 100%; /* Makes research images stack vertically on mobile */
+                max-width: 100%;
+            }
+        }
+        /* --- END Media Query --- */
     </style>
 </head>
 <body>
@@ -283,5 +315,6 @@
       <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
     </div>
 
-    </div> </body>
+    </div>
+</body>
 </html>
