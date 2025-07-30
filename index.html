@@ -13,7 +13,7 @@
             padding: 0;
             color: #333;
         }
-        .container {
+        .container { /* This class is not used in the main layout, but kept for context */
             max-width: 960px;
             margin: 20px auto;
             padding: 0 20px;
@@ -28,22 +28,62 @@
             background: #ddd;
             margin: 40px 0;
         }
-        .publication-item {
+        .publication-item { /* This class is not used in the main layout, but kept for context */
             margin-bottom: 1em; /* Space between publications */
         }
-        /* Styles for images */
-        .image-container {
-            display: flex; /* Use flexbox for vertical stacking */
-            flex-direction: column; /* Stack items vertically */
-            gap: 10px; /* Space between images */
-            align-items: center; /* Center images horizontally in their container */
+
+        /* --- NEW/MODIFIED STYLES FOR HEADER SECTION LAYOUT --- */
+        .header-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
         }
-        .image-container img {
-            width: 200px; /* Adjust as needed */
+
+        .header-text {
+            /* flex-grow: how much it grows if space is available */
+            /* flex-shrink: how much it shrinks if space is tight */
+            /* flex-basis: initial size before growing/shrinking */
+            flex: 1; /* Allows it to grow and shrink, but less aggressively than the photos */
+            max-width: 60%; /* Limits the maximum width of the text */
+            padding-right: 20px;
+        }
+
+        .header-images {
+            display: flex; /* Still using flex for arranging photos */
+            flex-direction: column; /* Or 'row' for side-by-side */
+            gap: 10px; /* Space between photos */
+            flex: 0 0 40%; /* Don't grow (0), don't shrink (0), fixed initial width (40%) */
+                               /* Adjust 40% based on desired photo width relative to text */
+            align-items: center; /* Centers photos if they don't fill the width */
+        }
+        .header-images img {
+            width: 100%; /* Make images fill the width of their container */
             height: auto;
             border-radius: 8px;
-            flex-shrink: 0; /* Prevent images from shrinking */
+            display: block; /* Removes extra space below images */
         }
+        /* --- END NEW/MODIFIED STYLES --- */
+
+
+        /* Existing styles for publication section */
+        .publication {
+            margin-bottom: 2em;
+            padding: 1em;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+        .publication h3 {
+            margin-top: 0;
+        }
+        .publication h3 a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        .publication h3 a:hover {
+            text-decoration: underline;
+        }
+        .authors { /* Authors will be styled individually, no global bold here */ }
+        .journal-info { font-style: italic; }
     </style>
 </head>
 <body>
@@ -54,18 +94,16 @@
         <a href="#publications" style="margin: 0 15px; text-decoration: none; color: #333;">Publications</a>
     </div>
 
-    <div style="display: flex; align-items: flex-start; padding: 20px;">
-        <div style="flex: 1; padding-right: 20px;">
+    <div class="header-section">
+        <div class="header-text">
             <h1>Hi! I'm Alon, an astrophysics PhD student at Tel Aviv University and an avid rock climber.</h1>
             <p>email: alongurman at gmail dot com</p>
         </div>
-        <div class="image-container">
+        <div class="header-images">
             <img src="photo1.jpg" alt="Photo 1">
             <img src="photo2.jpg" alt="Photo 2">
         </div>
     </div>
-
-
     <hr>
     <h2 id="research">Research</h2>
     <hr>
