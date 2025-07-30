@@ -32,7 +32,7 @@
             margin-bottom: 1em; /* Space between publications */
         }
 
-        /* --- NEW/MODIFIED STYLES FOR HEADER SECTION LAYOUT --- */
+        /* --- STYLES FOR HEADER SECTION LAYOUT --- */
         .header-section {
             display: flex;
             align-items: flex-start;
@@ -40,30 +40,75 @@
         }
 
         .header-text {
-            /* flex-grow: how much it grows if space is available */
-            /* flex-shrink: how much it shrinks if space is tight */
-            /* flex-basis: initial size before growing/shrinking */
-            flex: 1; /* Allows it to grow and shrink, but less aggressively than the photos */
-            max-width: 60%; /* Limits the maximum width of the text */
+            flex: 1;
+            max-width: 60%;
             padding-right: 20px;
         }
 
         .header-images {
-            display: flex; /* Still using flex for arranging photos */
+            display: flex;
             flex-direction: column; /* Or 'row' for side-by-side */
-            gap: 10px; /* Space between photos */
-            flex: 0 0 40%; /* Don't grow (0), don't shrink (0), fixed initial width (40%) */
-                               /* Adjust 40% based on desired photo width relative to text */
-            align-items: center; /* Centers photos if they don't fill the width */
+            gap: 10px; /* Space between photos/figures */
+            flex: 0 0 40%;
+            align-items: center;
         }
+
+        .header-images figure {
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .header-images img {
-            width: 100%; /* Make images fill the width of their container */
+            width: 100%;
             height: auto;
             border-radius: 8px;
-            display: block; /* Removes extra space below images */
+            display: block;
         }
-        /* --- END NEW/MODIFIED STYLES --- */
 
+        .header-images figcaption {
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 5px;
+            color: #555;
+        }
+        /* --- END HEADER SECTION STYLES --- */
+
+        /* --- NEW STYLES FOR RESEARCH VISUALS --- */
+        .research-visuals {
+            display: flex;
+            justify-content: center; /* Center the items if they don't fill the whole width */
+            gap: 20px; /* Space between the two figures */
+            padding: 20px 0; /* Some padding above/below this section */
+            flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+        }
+
+        .research-visuals figure {
+            margin: 0; /* Remove default figure margins */
+            flex: 1 1 45%; /* Allow figures to grow/shrink, with a basis of 45% of container width */
+                          /* Adjust 45% for desired width, considering gap */
+            max-width: 300px; /* Max width for each figure */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .research-visuals figure img {
+            width: 100%; /* Image fills its figure container */
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 10px; /* Space between image and caption */
+        }
+
+        .research-visuals figcaption {
+            font-size: 0.9em;
+            color: #555;
+        }
+        /* --- END NEW STYLES FOR RESEARCH VISUALS --- */
 
         /* Existing styles for publication section */
         .publication {
@@ -100,15 +145,33 @@
             <p>email: alongurman at gmail dot com</p>
         </div>
         <div class="header-images">
-            <img src="photo1.jpg" alt="Photo 1">
-<!--             <img src="photo2.jpg" alt="Photo 2">  -->
+            <figure>
+                <img src="photo1.jpg" alt="Photo 1">
+                <figcaption>3000 feet of the ground in Yosemite Valley.</figcaption>
+            </figure>
+<!--             <img src="photo2.jpg" alt="Photo 2"> -->
         </div>
     </div>
+
+
     <hr>
     <h2 id="research">Research</h2>
     <hr>
     <p>I am interested in all things ISM. I use the GHOSDT (Galaxy HydrOdynamical simulations of Supernova Driven Turbulence) simulations to investigate the cold ISM, star-formation self-regulation, and to predict emission lines.</p>
 
+    <div class="research-visuals">
+        <figure>
+            <a href="picture3.pdf" target="_blank">
+                <img src="pdf_thumbnail.png" alt="Thumbnail for Research Document (PDF)">
+            </a>
+            <figcaption>Metallicity dependence of [C II] emission.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="picture4.png" alt="Illustration related to Research">
+            <figcaption>Gas-rich disk with and without magnetic fields.</figcaption>
+        </figure>
+    </div>
     <hr>
 
     <h2 id="about-me">About Me</h2>
@@ -144,7 +207,7 @@
 </div>
 
 <div class="publication">
-  <h3><a href="https://doi.org/10.3847/1538-4357/ac167b" target="_blank">H I-to-H<sub>2</sub> Transitions in Dust-free Interstellar Gas</a></h3>
+  <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I-to-H<sub>2</sub> Transitions in Dust-free Interstellar Gas</a></h3>
   <p class="authors">Sternberg, Amiel; <strong>Gurman, Alon</strong>; Bialy, Shmuel</p>
   <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
 </div>
