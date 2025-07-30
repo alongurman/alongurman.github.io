@@ -76,20 +76,20 @@
         }
         /* --- END HEADER SECTION STYLES --- */
 
-        /* --- NEW STYLES FOR RESEARCH VISUALS --- */
+        /* --- STYLES FOR RESEARCH VISUALS --- */
         .research-visuals {
             display: flex;
-            justify-content: center; /* Center the items if they don't fill the whole width */
+            justify-content: center;
             gap: 20px; /* Space between the two figures */
-            padding: 20px 0; /* Some padding above/below this section */
+            padding: 20px 0;
             flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
         }
 
         .research-visuals figure {
             margin: 0; /* Remove default figure margins */
-            flex: 1 1 45%; /* Allow figures to grow/shrink, with a basis of 45% of container width */
-                          /* Adjust 45% for desired width, considering gap */
-            max-width: 300px; /* Max width for each figure */
+            flex: 1 1 48%; /* Allows figures to grow/shrink, with a basis of 48% of container width */
+                          /* This is good for two items side-by-side with a gap */
+            max-width: 450px; /* **Adjust this value to make the images bigger or smaller** */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -108,7 +108,7 @@
             font-size: 0.9em;
             color: #555;
         }
-        /* --- END NEW STYLES FOR RESEARCH VISUALS --- */
+        /* --- END STYLES FOR RESEARCH VISUALS --- */
 
         /* Existing styles for publication section */
         .publication {
@@ -149,8 +149,7 @@
                 <img src="photo1.jpg" alt="Photo 1">
                 <figcaption>3000 feet of the ground in Yosemite Valley.</figcaption>
             </figure>
-<!--             <img src="photo2.jpg" alt="Photo 2"> -->
-        </div>
+            </div>
     </div>
 
 
@@ -161,14 +160,12 @@
 
     <div class="research-visuals">
         <figure>
-            <a href="picture3.pdf" target="_blank">
-                <img src="pdf_thumbnail.png" alt="Thumbnail for Research Document (PDF)">
-            </a>
+            <img src="picture3.jpg" alt="Metallicity dependence of [C II] emission">
             <figcaption>Metallicity dependence of [C II] emission.</figcaption>
         </figure>
 
         <figure>
-            <img src="picture4.png" alt="Illustration related to Research">
+            <img src="picture4.png" alt="Gas-rich disk with and without magnetic fields">
             <figcaption>Gas-rich disk with and without magnetic fields.</figcaption>
         </figure>
     </div>
