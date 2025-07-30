@@ -31,6 +31,19 @@
         .publication-item {
             margin-bottom: 1em; /* Space between publications */
         }
+        /* Styles for images */
+        .image-container {
+            display: flex; /* Use flexbox for vertical stacking */
+            flex-direction: column; /* Stack items vertically */
+            gap: 10px; /* Space between images */
+            align-items: center; /* Center images horizontally in their container */
+        }
+        .image-container img {
+            width: 200px; /* Adjust as needed */
+            height: auto;
+            border-radius: 8px;
+            flex-shrink: 0; /* Prevent images from shrinking */
+        }
     </style>
 </head>
 <body>
@@ -46,8 +59,9 @@
             <h1>Hi! I'm Alon, an astrophysics PhD student at Tel Aviv University and an avid rock climber.</h1>
             <p>email: alongurman at gmail dot com</p>
         </div>
-        <div style="flex-shrink: 0;">
-             <img src="your-photo.jpg" alt="Your Photo" style="width: 200px; height: auto; border-radius: 8px;">
+        <div class="image-container">
+            <img src="photo1.jpg" alt="Photo 1">
+            <img src="photo2.jpg" alt="Photo 2">
         </div>
     </div>
 
@@ -96,5 +110,5 @@
   <p class="authors">Sternberg, Amiel; <strong>Gurman, Alon</strong>; Bialy, Shmuel</p>
   <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
 </div>
-    </body>
+</body>
 </html>
