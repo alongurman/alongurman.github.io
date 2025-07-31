@@ -1,320 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alon Gurman's Website</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* ADD THIS NEW RULE FOR SMOOTH SCROLL */
-        html {
-            scroll-behavior: smooth;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alon Gurman's Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ADD THIS NEW RULE FOR SMOOTH SCROLL */
+        html {
+            scroll-behavior: smooth;
+        }
 
-        /* Optional: Add some basic global styling here if needed */
-        body {
-            font-family: 'Rubik', Arial, sans-serif; /* Applied to body for general text */
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            font-size: 30px; /* Default font size for larger screens */
-            background-color: #F8F8F8; /* A light, almost white grey */
-        }
-        .container { /* This class is not used in the main layout, but kept for context */
-            max-width: 960px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        h1, h2 {
-            font-family: 'Rubik', sans-serif; /* Applied to headings */
-            color: #2c3e50;
-        }
-        /* Style for the horizontal separators if you want them more prominent */
-        hr {
-            border: 0;
-            height: 1px;
-            background: #ddd;
-            margin: 40px 0;
-        }
-        .publication-item { /* This class is not used in the main layout, but kept for context */
-            margin-bottom: 1em; /* Space between publications */
-        }
+        /* Optional: Add some basic global styling here if needed */
+        body {
+            font-family: 'Rubik', Arial, sans-serif; /* Applied to body for general text */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-size: 30px; /* Default font size for larger screens */
+            background-color: #F8F8F8; /* A light, almost white grey */
+        }
+        .container { /* This class is not used in the main layout, but kept for context */
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1, h2 {
+            font-family: 'Rubik', sans-serif; /* Applied to headings */
+            color: #2c3e50;
+        }
+        /* Style for the horizontal separators if you want them more prominent */
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 40px 0;
+        }
+        .publication-item { /* This class is not used in the main layout, but kept for context */
+            margin-bottom: 1em; /* Space between publications */
+        }
 
-        /* --- STYLES FOR TOP NAVIGATION BAR --- */
-        .top-nav {
-            text-align: center;
-            background-color: #000000; /* Black */
-            padding: 10px 0;
-        }
+        /* --- STYLES FOR TOP NAVIGATION BAR --- */
+        .top-nav {
+            text-align: center;
+            background-color: #000000; /* Black */
+            padding: 10px 0;
+        }
 
-        .top-nav a {
-            font-size: 1.2em; /* You can adjust this value */
-            color: #FFFFFF; /* White */
-            margin: 0 15px;
-            text-decoration: none;
-        }
+        .top-nav a {
+            font-size: 1.2em; /* You can adjust this value */
+            color: #FFFFFF; /* White */
+            margin: 0 15px;
+            text-decoration: none;
+        }
 
-        .top-nav a:hover {
-            text-decoration: underline; /* Optional: Add underline on hover */
-        }
-        /* --- END STYLES FOR TOP NAVIGATION BAR --- */
+        .top-nav a:hover {
+            text-decoration: underline; /* Optional: Add underline on hover */
+        }
+        /* --- END STYLES FOR TOP NAVIGATION BAR --- */
 
-        /* --- MAIN CONTENT WRAPPER FOR MARGINS --- */
-        .main-content {
-            max-width: 1200px; /* Adjust max width as needed */
-            margin: 0 auto;    /* Centers the content horizontally */
-            padding: 0 25px;   /* Top/bottom padding 0, left/right padding 25px for larger screens */
-            box-sizing: border-box; /* Ensures padding is included in the max-width */
-        }
-        /* --- END MAIN CONTENT WRAPPER --- */
-
-
-        /* --- STYLES FOR HEADER SECTION LAYOUT --- */
-        .header-section {
-            display: flex;
-            align-items: flex-start;
-            padding: 20px;
-        }
-
-        .header-text {
-            flex: 1;
-            max-width: 60%;
-            padding-right: 20px;
-        }
-
-        .header-images {
-            display: flex;
-            flex-direction: column; /* Or 'row' for side-by-side */
-            gap: 10px; /* Space between photos/figures */
-            flex: 0 0 40%;
-            align-items: center;
-        }
-
-        .header-images figure {
-            margin: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header-images img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-
-        .header-images figcaption {
-            font-size: 0.9em;
-            text-align: center;
-            margin-top: 5px;
-            color: #555;
-        }
-        /* --- END HEADER SECTION STYLES --- */
-
-        /* --- MODIFIED STYLES FOR RESEARCH VISUALS (WIDER IMAGES) --- */
-        .research-visuals {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between the two figures */
-            padding: 20px 0;
-            flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
-        }
-
-        .research-visuals figure {
-            margin: 0; /* Remove default figure margins */
-            flex: 1 1 49%; /* Slightly increased flex-basis */
-                          /* This allows them to take up more horizontal space */
-            max-width: 800px; /* **SIGNIFICANTLY INCREASED MAX-WIDTH FOR EVEN BIGGER IMAGES** */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .research-visuals figure img {
-            width: 100%; /* Image fills its figure container */
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin-bottom: 10px; /* Space between image and caption */
-        }
-
-        .research-visuals figcaption {
-            font-size: 0.9em;
-            color: #555;
-        }
-        /* --- END MODIFIED STYLES FOR RESEARCH VISUALS --- */
-
-        /* --- NEW STYLES FOR ABOUT ME IMAGES (SAME HEIGHT, NO SQUISHING) --- */
-        .about-me-images {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px 0;
-            flex-wrap: wrap;
-            align-items: flex-end; /* Aligns bottoms of images */
-            /* Or 'center' if you prefer vertical centering */
-        }
-
-        .about-me-images img {
-            height: 400px; /* Set a fixed height for all images in this section */
-            width: auto;   /* Crucially, let the width adjust to maintain aspect ratio */
-            border-radius: 8px;
-            margin-bottom: 10px;
-            object-fit: contain; /* Ensures the entire image is visible within the fixed height, no cropping */
-            /* Or 'cover' if you prefer the image to fill the space and be cropped if necessary */
-        }
-        /* --- END NEW STYLES FOR ABOUT ME IMAGES --- */
+        /* --- MAIN CONTENT WRAPPER FOR MARGINS --- */
+        .main-content {
+            max-width: 1200px; /* Adjust max width as needed */
+            margin: 0 auto;    /* Centers the content horizontally */
+            padding: 0 25px;   /* Top/bottom padding 0, left/right padding 25px for larger screens */
+            box-sizing: border-box; /* Ensures padding is included in the max-width */
+        }
+        /* --- END MAIN CONTENT WRAPPER --- */
 
 
-        /* Existing styles for publication section */
-        .publication {
-            margin-bottom: 2em;
-            padding: 1em;
-            border: 1px solid #eee;
-            border-radius: 5px;
-        }
-        .publication h3 {
-            margin-top: 0;
-        }
-        .publication h3 a {
-            text-decoration: none;
-            color: #0056b3;
-        }
-        .publication h3 a:hover {
-            text-decoration: underline;
-        }
-        .authors { /* Authors will be styled individually, no global bold here */ }
-        .journal-info { font-style: italic; }
+        /* --- STYLES FOR HEADER SECTION LAYOUT --- */
+        .header-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .header-text {
+            flex: 1;
+            max-width: 60%;
+            padding-right: 20px;
+        }
+
+        .header-images {
+            display: flex;
+            flex-direction: column; /* Or 'row' for side-by-side */
+            gap: 10px; /* Space between photos/figures */
+            flex: 0 0 40%;
+            align-items: center;
+        }
+
+        .header-images figure {
+            margin: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-images img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .header-images figcaption {
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 5px;
+            color: #555;
+        }
+        /* --- END HEADER SECTION STYLES --- */
+
+        /* --- MODIFIED STYLES FOR RESEARCH VISUALS (WIDER IMAGES) --- */
+        .research-visuals {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between the two figures */
+            padding: 20px 0;
+            flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+        }
+
+        .research-visuals figure {
+            margin: 0; /* Remove default figure margins */
+            flex: 1 1 49%; /* Slightly increased flex-basis */
+                          /* This allows them to take up more horizontal space */
+            max-width: 800px; /* **SIGNIFICANTLY INCREASED MAX-WIDTH FOR EVEN BIGGER IMAGES** */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .research-visuals figure img {
+            width: 100%; /* Image fills its figure container */
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 10px; /* Space between image and caption */
+        }
+
+        .research-visuals figcaption {
+            font-size: 0.9em;
+            color: #555;
+        }
+        /* --- END MODIFIED STYLES FOR RESEARCH VISUALS --- */
+
+        /* --- NEW STYLES FOR ABOUT ME IMAGES (SAME HEIGHT, NO SQUISHING) --- */
+        .about-me-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            align-items: flex-end; /* Aligns bottoms of images */
+            /* Or 'center' if you prefer vertical centering */
+        }
+
+        .about-me-images img {
+            height: 400px; /* Set a fixed height for all images in this section */
+            width: auto;   /* Crucially, let the width adjust to maintain aspect ratio */
+            border-radius: 8px;
+            margin-bottom: 10px;
+            object-fit: contain; /* Ensures the entire image is visible within the fixed height, no cropping */
+            /* Or 'cover' if you prefer the image to fill the space and be cropped if necessary */
+        }
+        /* --- END NEW STYLES FOR ABOUT ME IMAGES --- */
 
 
-        /* --- NEW: Media Query for Mobile Devices --- */
-        @media (max-width: 768px) {
-            body {
-                font-size: 18px; /* Smaller font size for mobile body text */
-            }
-            h1 {
-                font-size: 2em; /* Adjust heading 1 size for mobile */
-            }
-            h2 {
-                font-size: 1.5em; /* Adjust heading 2 size for mobile */
-            }
-            .main-content {
-                padding-left: 15px; /* Keep left padding as is (or adjust if needed) */
-                padding-right: 10px; /* Smaller right padding for mobile */
-            }
-            .header-section {
-                flex-direction: column; /* Stacks header text and images vertically on mobile */
-                align-items: center; /* Centers items when stacked */
-            }
-            .header-text {
-                max-width: 100%; /* Allows text to take full width */
-                padding-right: 0; /* Removes extra padding */
-                text-align: center; /* Centers header text */
-            }
-            .header-images {
-                flex: 0 0 100%; /* Images take full width */
-                width: 100%; /* Ensure images scale */
-            }
-            .research-visuals figure {
-                flex: 1 1 100%; /* Makes research images stack vertically on mobile */
-                max-width: 100%;
-            }
-        }
-        /* --- END Media Query --- */
-    </style>
+        /* Existing styles for publication section */
+        .publication {
+            margin-bottom: 2em;
+            padding: 1em;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+        .publication h3 {
+            margin-top: 0;
+        }
+        .publication h3 a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        .publication h3 a:hover {
+            text-decoration: underline;
+        }
+        .authors { /* Authors will be styled individually, no global bold here */ }
+        .journal-info { font-style: italic; }
+
+
+        /* --- NEW: Media Query for Mobile Devices --- */
+        @media (max-width: 768px) {
+            body {
+                font-size: 18px; /* Smaller font size for mobile body text */
+            }
+            h1 {
+                font-size: 2em; /* Adjust heading 1 size for mobile */
+            }
+            h2 {
+                font-size: 1.5em; /* Adjust heading 2 size for mobile */
+            }
+            .main-content {
+                padding-left: 15px; /* Keep left padding as is (or adjust if needed) */
+                padding-right: 10px; /* Smaller right padding for mobile */
+            }
+            .header-section {
+                flex-direction: column; /* Stacks header text and images vertically on mobile */
+                align-items: center; /* Centers items when stacked */
+            }
+            .header-text {
+                max-width: 100%; /* Allows text to take full width */
+                padding-right: 0; /* Removes extra padding */
+                text-align: center; /* Centers header text */
+            }
+            .header-images {
+                flex: 0 0 100%; /* Images take full width */
+                width: 100%; /* Ensure images scale */
+            }
+            .research-visuals figure {
+                flex: 1 1 100%; /* Makes research images stack vertically on mobile */
+                max-width: 100%;
+            }
+        }
+        /* --- END Media Query --- */
+    </style>
 </head>
 <body>
 
-    <div class="top-nav">
-        <a href="#research">Research</a>
-        <a href="#about-me">About Me</a>
-        <a href="#publications">Publications</a>
-    </div>
+    <div class="top-nav">
+        <a href="#research">Research</a>
+        <a href="#about-me">About Me</a>
+        <!-- Added a link to your CV here -->
+        <a href="Alon_Gurman_CV.pdf">CV</a>
+        <a href="#publications">Publications</a>
+    </div>
 
-    <div class="main-content">
+    <div class="main-content">
 
-        <div class="header-section">
-            <div class="header-text">
-                <h1>Hi! I'm Alon, an astrophysics PhD student at Tel Aviv University.</h1>
-                <p>email: alongurman at gmail dot com</p>
-            </div>
-            <div class="header-images">
-                <figure>
-                    <img src="photo1.jpg" alt="Photo 1">
-                    <figcaption>3000 feet of the ground in Yosemite Valley.</figcaption>
-                </figure>
-            </div>
-        </div>
+        <div class="header-section">
+            <div class="header-text">
+                <h1>Hi! I'm Alon, an astrophysics PhD student at Tel Aviv University.</h1>
+                <p>email: alongurman at gmail dot com</p>
+            </div>
+            <div class="header-images">
+                <figure>
+                    <img src="photo1.jpg" alt="Photo 1">
+                    <figcaption>3000 feet of the ground in Yosemite Valley.</figcaption>
+                </figure>
+            </div>
+        </div>
 
 
-        <hr>
-        <h2 id="research">Research</h2>
-        <hr>
-        <p>I am interested in all things ISM. I use the GHOSDT (Galaxy HydrOdynamical simulations of Supernova Driven Turbulence) simulations to investigate the cold ISM, star-formation self-regulation, and to predict emission lines.</p>
+        <hr>
+        <h2 id="research">Research</h2>
+        <hr>
+        <p>I am interested in all things ISM. I use the GHOSDT (Galaxy HydrOdynamical simulations of Supernova Driven Turbulence) simulations to investigate the cold ISM, star-formation self-regulation, and to predict emission lines.</p>
 
-        <div class="research-visuals">
-            <figure>
-                <img src="picture3.png" alt="Metallicity dependence of [C II] emission">
-                <figcaption>Metallicity dependence of [C II] emission.</figcaption>
-            </figure>
+        <div class="research-visuals">
+            <figure>
+                <img src="picture3.png" alt="Metallicity dependence of [C II] emission">
+                <figcaption>Metallicity dependence of [C II] emission.</figcaption>
+            </figure>
 
-            <figure>
-                <img src="picture4.png" alt="Gas-rich disk with and without magnetic fields">
-                <figcaption>Gas-rich disk with and without magnetic fields.</figcaption>
-            </figure>
-        </div>
-        <hr>
+            <figure>
+                <img src="picture4.png" alt="Gas-rich disk with and without magnetic fields">
+                <figcaption>Gas-rich disk with and without magnetic fields.</figcaption>
+            </figure>
+        </div>
+        <hr>
 
-        <h2 id="about-me">About Me</h2>
-        <hr>
-        <p>I live a second life as a rock climber. I have toured North America living out of a minivan climbing some big walls and sometimes equally challenging small rocks, from Tutokanula (El Capitan) in Yosemite Valley to Mount Hooker in the Wind River Range. I am very interested in the political history of the middle east, have been vegan since 2010, and my favorite fruit is watermelon <img src="picture5.png" alt="Watermelon" style="width: 35px; height: 35px; vertical-align: middle;"></p>
+        <h2 id="about-me">About Me</h2>
+        <hr>
+        <p>I live a second life as a rock climber. I have toured North America living out of a minivan climbing some big walls and sometimes equally challenging small rocks, from Tutokanula (El Capitan) in Yosemite Valley to Mount Hooker in the Wind River Range. I am very interested in the political history of the middle east, have been vegan since 2010, and my favorite fruit is watermelon <img src="picture5.png" alt="Watermelon" style="width: 35px; height: 35px; vertical-align: middle;"></p>
 
-        <div class="about-me-images">
-            <img src="picture6.png" alt="About Me Image 6">
-            <img src="picture7.png" alt="About Me Image 7">
-            <img src="picture8.jpg" alt="About Me Image 8">
-        </div>
+        <div class="about-me-images">
+            <img src="picture6.png" alt="About Me Image 6">
+            <img src="picture7.png" alt="About Me Image 7">
+            <img src="picture8.jpg" alt="About Me Image 8">
+        </div>
 
-        <hr>
+        <hr>
 
-        <h2 id="publications">Publications</h2>
-        <hr>
-        <div class="publication">
-      <h3><a href="https://doi.org/10.48550/arXiv.2507.16700" target="_blank">The GHOSDT Simulations: II. Missing Molecules in Simulations of a Self-Regulated Interstellar Medium</a></h3>
-      <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Grudic, Michael Y.; Steinwandel, Ulrich P.; Sternberg, Amiel</p>
-      <p class="journal-info">arXiv e-prints, July 2025, arXiv:2507.16700</p>
-    </div>
+        <h2 id="publications">Publications</h2>
+        <hr>
+        <div class="publication">
+      <h3><a href="https://doi.org/10.48550/arXiv.2507.16700" target="_blank">The GHOSDT Simulations: II. Missing Molecules in Simulations of a Self-Regulated Interstellar Medium</a></h3>
+      <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Grudic, Michael Y.; Steinwandel, Ulrich P.; Sternberg, Amiel</p>
+      <p class="journal-info">arXiv e-prints, July 2025, arXiv:2507.16700</p>
+    </div>
 
-    <div class="publication">
-      <h3><a href="https://doi.org/10.3847/1538-4357/adc814" target="_blank">The GHOSDT Simulations: I. Magnetic Support in Gas-rich Disks</a></h3>
-      <p class="authors"><strong>Gurman, Alon</strong>; Steinwandel, Ulrich P.; Hu, Chia-Yu; Sternberg, Amiel</p>
-      <p class="journal-info">The Astrophysical Journal, May 2025, Volume 984, Number 2, page 142</p>
-    </div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/adc814" target="_blank">The GHOSDT Simulations: I. Magnetic Support in Gas-rich Disks</a></h3>
+      <p class="authors"><strong>Gurman, Alon</strong>; Steinwandel, Ulrich P.; Hu, Chia-Yu; Sternberg, Amiel</p>
+      <p class="journal-info">The Astrophysical Journal, May 2025, Volume 984, Number 2, page 142</p>
+    </div>
 
-    <div class="publication">
-      <h3><a href="https://doi.org/10.3847/1538-4357/ad2eac" target="_blank">[C II] Emission in a Self-regulated Interstellar Medium</a></h3>
-      <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Sternberg, Amiel; van Dishoeck, Ewine F.</p>
-      <p class="journal-info">The Astrophysical Journal, April 2024, Volume 965, Number 2, page 179</p>
-    </div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/ad2eac" target="_blank">[C II] Emission in a Self-regulated Interstellar Medium</a></h3>
+      <p class="authors"><strong>Gurman, Alon</strong>; Hu, Chia-Yu; Sternberg, Amiel; van Dishoeck, Ewine F.</p>
+      <p class="journal-info">The Astrophysical Journal, April 2024, Volume 965, Number 2, page 179</p>
+    </div>
 
-    <div class="publication">
-      <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I in Molecular Clouds: Irradiation by FUV Plus Cosmic Rays</a></h3>
-      <p class="authors">Sternberg, Amiel; Bialy, Shmuel; <strong>Gurman, Alon</strong></p>
-      <p class="journal-info">The Astrophysical Journal, January 2024, Volume 960, Number 1, page 8</p>
-    </div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I in Molecular Clouds: Irradiation by FUV Plus Cosmic Rays</a></h3>
+      <p class="authors">Sternberg, Amiel; Bialy, Shmuel; <strong>Gurman, Alon</strong></p>
+      <p class="journal-info">The Astrophysical Journal, January 2024, Volume 960, Number 1, page 8</p>
+    </div>
 
-    <div class="publication">
-      <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I-to-H<sub>2</sub> Transitions in Dust-free Interstellar Gas</a></h3>
-      <p class="authors">Sternberg, Amiel; <strong>Gurman, Alon</strong>; Bialy, Shmuel</p>
-      <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
-    </div>
+    <div class="publication">
+      <h3><a href="https://doi.org/10.3847/1538-4357/ad0465" target="_blank">H I-to-H<sub>2</sub> Transitions in Dust-free Interstellar Gas</a></h3>
+      <p class="authors">Sternberg, Amiel; <strong>Gurman, Alon</strong>; Bialy, Shmuel</p>
+      <p class="journal-info">The Astrophysical Journal, October 2021, Volume 920, Number 2, page 83</p>
+    </div>
 
-    </div>
+    </div>
 </body>
 </html>
